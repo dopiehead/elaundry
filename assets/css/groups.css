@@ -1,0 +1,293 @@
+
+.gr-groups-section {
+    padding: 30px 0;
+}
+
+.gr-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.gr-section-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.gr-see-more {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.gr-see-more:hover {
+    text-decoration: underline;
+    color: #c82333;
+}
+
+.gr-groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.gr-group-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.gr-group-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.gr-group-image {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gr-group-info {
+    padding: 15px;
+}
+
+.gr-group-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.gr-group-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.gr-join-btn {
+    background: #6f42c1;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.gr-join-btn:hover {
+    background: #5a359a;
+    color: white;
+}
+
+.gr-promo-banner {
+    background: linear-gradient(135deg, #6f42c1 0%, #8b5cf6 100%);
+    border-radius: 16px;
+    padding: 30px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.gr-promo-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+.gr-promo-content {
+    position: relative;
+    z-index: 2;
+}
+
+.gr-promo-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.gr-promo-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.gr-promo-btn {
+    background: white;
+    color: #6f42c1;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.gr-promo-btn:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+    color: #6f42c1;
+}
+
+.gr-promo-illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.gr-illustration-container {
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+.gr-washing-machine {
+    width: 80px;
+    height: 80px;
+    background: #4ade80;
+    border-radius: 12px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+.gr-machine-door {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.gr-machine-door::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #22c55e;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gr-detergent-bottle {
+    width: 25px;
+    height: 35px;
+    background: #fbbf24;
+    border-radius: 4px 4px 8px 8px;
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    box-shadow: 0 2px 6px rgba(251, 191, 36, 0.3);
+}
+
+.gr-detergent-bottle::before {
+    content: '';
+    width: 15px;
+    height: 8px;
+    background: #f59e0b;
+    border-radius: 4px 4px 0 0;
+    position: absolute;
+    top: -8px;
+    left: 5px;
+}
+
+.gr-basket {
+    width: 30px;
+    height: 20px;
+    background: #8b5cf6;
+    border-radius: 4px;
+    position: absolute;
+    bottom: -5px;
+    left: -15px;
+    box-shadow: 0 2px 6px rgba(139, 92, 246, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .gr-groups-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .gr-promo-banner {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .gr-promo-title {
+        font-size: 1.3rem;
+    }
+
+    .gr-promo-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .gr-illustration-container {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+    }
+
+    .gr-washing-machine {
+        width: 70px;
+        height: 70px;
+    }
+
+    .gr-machine-door {
+        width: 45px;
+        height: 45px;
+        top: 12px;
+        left: 12px;
+    }
+
+    .gr-footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gr-groups-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gr-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .gr-promo-title {
+        font-size: 1.1rem;
+    }
+
+    .gr-footer-banner {
+        padding: 20px 15px;
+    }
+}
+

@@ -1,0 +1,25 @@
+table { 
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 20px; 
+    }
+th, td { 
+     padding: 10px; 
+     text-align: center; 
+     border: 1px solid #ccc;
+ }
+.active { 
+     font-weight: bold;
+     text-decoration: underline;
+     }
+.numbering { 
+     color: red;
+     font-weight: bold;
+ }
+a {
+     text-decoration: none; 
+     margin: 0 4px;
+     }
+.main-content {
+     padding: 20px;
+     }

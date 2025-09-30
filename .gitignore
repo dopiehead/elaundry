@@ -1,0 +1,12 @@
+*.env
+
+*.mp4
+
+*.jpeg
+*.jpg
+*.gif
+
+/vendor/
+
+
+*.sql

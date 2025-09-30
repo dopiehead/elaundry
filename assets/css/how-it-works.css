@@ -1,0 +1,124 @@
+/* How it Works Section */
+.how-it-works {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    color: var(--primary-purple);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.step-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    color: var(--primary-purple);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.step-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+/* Step Icons */
+.pickup-icon {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pickup-icon::before {
+    content: "📍";
+    font-size: 2rem;
+}
+
+.wash-icon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wash-machine {
+    width: 25px;
+    height: 35px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 5px;
+    position: relative;
+}
+
+.wash-machine::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #1e40af;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+}
+
+.fold-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.fold-icon::before {
+    content: "👕";
+    font-size: 2.5rem;
+}
+
+.delivery-icon {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.delivery-icon::before {
+    content: "🚚";
+    font-size: 2rem;
+}

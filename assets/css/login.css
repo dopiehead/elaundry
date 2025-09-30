@@ -1,0 +1,126 @@
+body {
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  }
+
+  .container-fluid {
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .login-section {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  .illustration-section {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: white;
+  }
+
+  .login-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 45px 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    animation: fadeUp 0.6s ease;
+  }
+
+  @keyframes fadeUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .form-label {
+    color: #495057;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .form-control {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 15px;
+    background-color: #f8f9fa;
+  }
+
+  .form-control:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+    background-color: #fff;
+  }
+
+  .btn-login {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-login:hover {
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79,70,229,0.25);
+  }
+
+  .signup-link {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .signup-text {
+    color: #6c757d;
+    font-size: 14px;
+  }
+
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+
+  .illustration-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 40px;
+  }
+
+  .illustration-image {
+    max-width: 90%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    .illustration-section {
+      display: none;
+    }
+    .login-card {
+      margin: 30px 15px;
+      padding: 35px 25px;
+    }
+  }

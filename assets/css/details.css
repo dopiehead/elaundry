@@ -1,0 +1,440 @@
+body {
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.btn-search{
+    background-color:red;
+}
+
+.header-section {
+    background-image: linear-gradient(135deg, #4fc2f79c 0%, #29b5f673 100%),url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    margin-top:30px;
+}
+
+.header-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.profile-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.character-illustration {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.character-illustration i {
+    font-size: 3rem;
+    color: white;
+}
+
+.request-btn {
+    background: #7c4dff;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.request-btn:hover {
+    background: #6a3de8;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.service-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.service-meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.rating {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.description-text {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.galleries-section {
+    margin-top: 3rem;
+}
+
+.galleries-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e3f2fd;
+    position: relative;
+    aspect-ratio: 16/10;
+}
+
+.gallery-item.large {
+    aspect-ratio: 16/12;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #1976d2;
+}
+
+.gallery-placeholder i {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+.bottom-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .header-section {
+        padding: 1.5rem 0;
+    }
+    
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .character-illustration {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .character-illustration i {
+        font-size: 2.5rem;
+    }
+    
+    .service-title {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bottom-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .galleries-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .bottom-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .request-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.comments-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+}
+
+.comments-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.comment-form {
+    margin-bottom: 2rem;
+}
+
+.comment-input {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    resize: none;
+    min-height: 60px;
+}
+
+.comment-input:focus {
+    outline: none;
+    border-color: #7c4dff;
+    box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.1);
+}
+
+.comment-input::placeholder {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.send-btn {
+    background: #7c4dff;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #6a3de8;
+}
+
+.comment-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.comment-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.commenter-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.connect-btn {
+    background: none;
+    border: none;
+    color: #7c4dff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+}
+
+.connect-btn:hover {
+    text-decoration: underline;
+}
+
+.comment-text {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.comment-emojis {
+    margin-bottom: 12px;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.comment-action {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.comment-action:hover {
+    color: #333;
+}
+
+.comment-time {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.emoji-reactions {
+    display: inline-flex;
+    gap: 2px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .comments-container {
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+    
+    .comment-form {
+        margin-bottom: 1.5rem;
+    }
+    
+    .comment-input {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    .comment-actions {
+        gap: 12px;
+    }
+    
+    .comment-action {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .comment-header {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    
+    .comment-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .send-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+.user-container {
+    width: 200px;
+    height: 200px;
+    left: 10px;
+    margin-top: -140px;
+    position:absolute; /* ✅ Needed for z-index to work */
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.317);
+}
+
+.user-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position:absolute; /* ensures image respects stacking */
+    z-index: inherit; /* inherits from parent */
+}

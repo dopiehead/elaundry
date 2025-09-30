@@ -1,0 +1,24 @@
+<?php
+$user_id            = $user['id']              ?? null;
+$user_name          = $user['user_name']       ?? "N/A";
+$user_email         = $user['user_email']      ??  "N/A";
+$user_type          = $user['user_type']       ??  "N/A";
+$user_image         = isset($user['user_image']) ? $user['user_image']:  "https://placehold.co/400";
+$user_dob           = $user['user_dob']        ??  "N/A";
+$user_bio           = $user['user_bio']        ??  "N/A";
+$user_phone         = $user['user_phone']      ??  "N/A";
+$user_location      = $user['user_location']   ??  "N/A";
+$lga                = $user['lga']             ??  "N/A";
+$user_address       = $user['user_address']    ??  "N/A";
+$user_full_address  = $user_address.",".$user_location ?? "N/A";
+$user_rating        = $user['user_rating']     ?? 0;
+$user_gender        = $user['user_gender']     ??  "N/A";
+$user_likes         = $user['user_likes']      ?? 0;
+$user_views         = $user['user_views']      ?? 0;
+$user_shares        = $user['user_shares']     ?? 0;
+$user_fee           = $user['user_fee']        ?? 0;
+$user_preference    = $user['user_preference'] ??  "N/A";
+$user_services      = $user['user_services']   ??  "N/A";
+$verified           = $user['verified']        ?? 0;
+$payment_status     = $user['payment_status']  ?? 0;
+$date_added         = $user['date_added']      ?? '';
