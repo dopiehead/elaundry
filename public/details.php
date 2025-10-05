@@ -177,9 +177,9 @@
             <div class="comment-content">
                 <div class="comment-header">
                     <span class="commenter-name">
-                        <?= htmlspecialchars($comments['user_name']) ?>
+                        <?= htmlspecialchars($comments['sender_name']) ?>
                     </span>
-                    <button class="connect-btn">Connect</button>
+                    <!-- <button class="connect-btn">Connect</button> -->
                 </div>
                 <div class="comment-text">
                     <?= htmlspecialchars($comments['comment']) ?>
@@ -189,7 +189,7 @@
                 </div>
                 <div class="comment-actions">
                     <span class="comment-time"><?= $auth->timeAgo($comments['date']) ?></span>
-                    <button class="comment-action">Like</button>
+                    <!-- <button class="comment-action">Like</button> -->
                 </div>
             </div>
         </div>

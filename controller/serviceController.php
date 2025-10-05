@@ -145,17 +145,17 @@ if ($getlist->execute()):
         $age = !empty($user_dob) ? date_diff(date_create($user_dob), date_create('today'))->y : "N/A";
 
         // Google API Distance
-        $apiKey = $_ENV['GOOGLE_DISTANCE_MATRIX'];
+        $apiKey = $_ENV['GOOGLE_DISTANCE_MATRIX'] ?? "";
         $origin = $user_full_address ?? "";
         $destination = $spLocation ?? "";
         $distance = 0;
         if (!empty($origin) && !empty($destination)) {
             $url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=" . urlencode($origin) . "&destinations=" . urlencode($destination) . "&mode=driving&units=metric&language=en-US&key=" . $apiKey;
-            $response = json_decode(file_get_contents($url), true);
+            $response = json_decode(file_get_contents($url), true) ?? null;
             if ($response && $response['status'] == 'OK') {
                 $element = $response['rows'][0]['elements'][0] ?? null;
                 if ($element && $element['status'] === 'OK') {
-                    $distance = $element['distance']['value']; // meters
+                    $distance = $element['distance']['value'] ?? ""; // meters
                 }
             }
         }

@@ -106,6 +106,7 @@ if(!$page):
                 $getitems->execute();
                 
                 $result = $getitems->get_result();
+                if($result->num_rows > 0):
                 while ($row = $result->fetch_assoc()):
                     $total += (float)$row['item_price'];
                 ?>
@@ -127,7 +128,11 @@ if(!$page):
                         </td>
                         <?php endif ?>
                     </tr>
-                <?php endwhile; ?>
+                <?php endwhile;
+                else:
+                 echo"Price is not set yet.";
+                endif;
+                ?>
                 <?php $getitems->close(); ?>
 
                 <tr class="total-row">
