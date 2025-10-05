@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>De-light Laundry</title>
     <?php include("../components/links.php") ?>
     <link rel="stylesheet" href="../assets/css/details.css">
-    <link rel="stylesheet" href="../assets/css/nav.css">
-    <link rel="stylesheet" href="../assets/css/price-break-down.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-
+    <link rel="stylesheet" href="../assets/css/pricingcontroller.css">
 </head>
 <body>
 <?php include("../components/nav.php") ?>
@@ -93,7 +89,7 @@
 <?php elseif (!$auth->isLoggedIn()): ?>
     <!-- 🚪 Not logged in → redirect to login -->
     <a class="btn btn-request btn-info" 
-       href="../public/login?details=<?= urlencode($redirectUrl) ?>">
+       href="login?details=<?= urlencode($redirectUrl) ?>">
        Request
     </a>
 
@@ -103,11 +99,14 @@
         Request
     </a>
 <?php endif; ?>
-
+  
                   
                     <!-- Trigger button -->
+                <?php if ($auth->isLoggedIn()): ?>
                  <button class='report-btn' id="openReportModal"> <i class='fa fa-flag'></i> Report User</button> 
-                
+                <?php else : ?>
+                    <a class='report-btn text-decoration-none' href="login?details=<?= urlencode($redirectUrl) ?>"> <i class='fa fa-flag'></i> Report User</a> 
+                <?php endif ?>
                 </div>
 
                 <!-- Galleries Section -->
@@ -140,7 +139,7 @@
 
     <br><br>
 
-    <?php include ("../components/price-break-down.php") ?>
+    <?php include ("../controller/pricingController.php") ?>
 
     <!-- price break down goes here -->
     <div class="container">
@@ -200,7 +199,7 @@
         </div>
     </div>
     <br><br>
-   
+  
     <!-- footer goes here -->
      <?php include("../components/footer.php") ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

@@ -1,7 +1,4 @@
 <?php
-require("../class/auth.php");
-$auth = new Auth(new Database);
-$conn = $auth->getConnection();
 
 $user_id = $auth->getUserId();
 if ($user_id) {

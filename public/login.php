@@ -51,6 +51,12 @@
       </div>
     </div>
   </div>
+  <?php
+$urlDetails = isset($_GET['details']) ? htmlspecialchars($_GET['details'], ENT_QUOTES, 'UTF-8') : null;
+?>
+
+ <input type="hidden" id='url_details' value='<?= htmlspecialchars($urlDetails) ?>'>
+   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
@@ -63,42 +69,53 @@
 $(document).on("click", "#submit", function(e) {
     e.preventDefault();
 
+    // Collect values
+    const email = $("#email").val().trim();
+    const password = $("#password").val().trim();
+    const url_details = $("#url_details").val();
+    
+    // Validate input
+    if (!email || !password) {
+        Swal.fire("Notice", "Please fill in both email and password.", "warning");
+        return;
+    }
+
+    // Show spinner & disable buttons
     $(".spinner-border").show();
     $(".signin-note").hide();
-    $('.btn-login, .btn-forget').prop('disabled', true); // disable button(s)
+    $('.btn-login, .btn-forget').prop('disabled', true);
 
+    // Prepare and send AJAX
     const formData = $("#login-form").serialize();
 
-    if (formData.length > 0) {
-        $.ajax({
-            url: "../controller/loginController",
-            type: "POST",
-            data: formData,
-            success: function(response) {
-                $(".spinner-border").hide();
-                $(".signin-note").show();
-                $('.btn-login, .btn-forget').prop('disabled', false); // re-enable
-                response = response.trim();
+    $.ajax({
+        url: "../controller/loginController",
+        type: "POST",
+        data: formData,
+        success: function(response) {
+            $(".spinner-border").hide();
+            $(".signin-note").show();
+            $('.btn-login, .btn-forget').prop('disabled', false);
 
-                if (response === "1") {
-                    // ✅ redirect if success
-                    window.location.href = "../protected/dashboard";
-                } else {
-                    // ❌ show error
-                    swal("Notice", response || "Login failed. Please try again.", "warning");
-                }
-            },
-            error: function(xhr, status, error) {
-                $(".spinner-border").hide();
-                $(".signin-note").show();
-                $('.btn-login, .btn-forget').prop('disabled', false); // re-enable
-                console.error("AJAX Error:", error);
-                swal("Notice", "Something went wrong. Please try again.", "warning");
+            response = response.trim();
+
+            if (response === "1") {
+                // Redirect if login is successful
+                window.location.href = url_details ? url_details : "../protected/dashboard";
+            } else {
+                // Show error message
+                Swal.fire("Notice", response || "Login failed. Please try again.", "warning");
             }
-        });
-    } else {
-        swal("Notice","Please fill in the required fields.","warning");
-    }
+        },
+        error: function(xhr, status, error) {
+            $(".spinner-border").hide();
+            $(".signin-note").show();
+            $('.btn-login, .btn-forget').prop('disabled', false);
+
+            console.error("AJAX Error:", error);
+            Swal.fire("Notice", "Something went wrong. Please try again.", "warning");
+        }
+    });
 });
 </script>
 

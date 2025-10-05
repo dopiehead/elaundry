@@ -46,7 +46,21 @@ foreach ($sidebarItems as $item) {
                 <i class="fas fa-credit-card"></i>
             </a>
         </div>
+
+
+        <div class="sidebar-item">
+                <a class="text-decoration-none" href="pricing.php" title="Delete Account">
+                   <i class="fas fa-money-bill-wave"></i>
+                </a>
+       </div>
+
+
+
+
+
+
  <?php endif ?>
+
 
 
         <!-- Grouped Settings Section -->

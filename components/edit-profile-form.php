@@ -48,10 +48,10 @@
 
     <h6>Address Details</h6>
     <div class="mb-3">
-        <select name="user_location" class="form-select location text-capitalize">
-            <option value="">Select State</option>
+      
+          
            <?php include("../contents/states.php") ?>
-        </select>
+       
     </div>
 
     <span id="lg" class="d-block mb-3"></span>

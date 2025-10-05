@@ -24,6 +24,7 @@ if (isset($_SESSION['user_id'])) {
         if ($getimage->fetch() && !empty($fetched_image)) {
             $user_image = $fetched_image;
         }
+        
         $getimage->close();
     }
 }

@@ -11,13 +11,6 @@ if (!$auth->checkLogin()) {
     exit;
 } 
 
-// ✅ Check login
-if (!$auth->checkLogin()) {
-    echo "<p class='text-warning'>Invalid user ID. Please login again.</p>";
-    header("Location:../public/login");
-    exit;
-}
-
 
 // ✅ Fetch user basic details
 $getuser = $conn->prepare("SELECT * FROM user_profile WHERE id = ? AND verified = 1");

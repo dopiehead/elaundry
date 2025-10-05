@@ -1,39 +1,14 @@
-<?php
-require("../class/auth.php");
-$auth = new Auth(new Database);
-$conn = $auth->getConnection();
-$user_id = $auth->getUserId();
-$txn_ref = time();
-$user_id =  $user_id !== "" ? is_numeric($user_id): 0;
-if($user_id > 0):
-
-   $getuser = $conn->prepare("SELECT * FROM user_profile WHERE id = ?");
-   $getuser->bind_param("i",$user_id);
-   if($getuser->execute()):
-     $userResult = $getuser->get_result();
-     $user = $userResult->fetch_assoc();
-      include("../contents/user-details.php");
-   endif;
-endif;
-
-?>
+<?php include("../controller/subscriptionController.php") ?>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include("../components/links.php") ?>
-
     <link rel="stylesheet" href="../assets/css/subscription.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Subscription</title>
 </head>
 <body>
   
    <br>
        <h2 class="text-white fw-bold text-capitalize text-center mt-3 mb-5">Choose subscription plan</h2>
-
-   
    <br>
     <div class="pricing-container">
         <div class="row justify-content-center">
@@ -52,22 +27,16 @@ endif;
                     
                     <div class="features-section">
                         <h6>What's included</h6>
-                        <div class="feature-item">
-                            <div class="feature-icon"></div>
-                            <span class="feature-text">2 cloth per week</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon"></div>
-                            <span class="feature-text">up to 10 lbs per cloth</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon"></div>
-                            <span class="feature-text">Special garments</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon"></div>
-                            <span class="feature-text">Pickup & drop off</span>
-                        </div>
+                        <?php 
+                        $features = ['2 cloth per week','up to 10 lbs per cloth',
+                        'Special garments','Pickup & drop off'];
+                        foreach ($features as $feature) { ?>
+                             <div class="feature-item">
+                                 <div class="feature-icon"></div>
+                                     <span class="feature-text"><?= htmlspecialchars($feature) ?></span>
+                              </div>
+                        <?php }  ?>
+    
                     </div>
                     
                     <div class="price-section">
@@ -99,8 +68,7 @@ endif;
                         <h6>What's included</h6>
                        <?php
                         $features = [ 
-                         '4 cloth per weeK',  'up to 12 lbs per cloth', 'Special garments', 'Pickup & drop off',
-                         
+                         '4 cloth per weeK',  'up to 12 lbs per cloth', 'Special garments', 'Pickup & drop off',             
                         ]; 
                          foreach ($features as $feature) {
                             echo"<div class='feature-item'>
@@ -175,6 +143,7 @@ endif;
     </div>
     <input type="hidden" name="phone" value="<?= htmlspecialchars($user_phone) ?>" id="phone_number">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
     // Ripple effect and selection feedback
     function selectPlan(planName, event) {
@@ -262,7 +231,7 @@ endif;
         const userType = "<?= htmlspecialchars($user_type); ?>";
         const userEmail = "<?= htmlspecialchars($user_email); ?>";
         const phone = document.getElementById('phone_number')?.value || "";
-        const txnRef = "<?php echo $txn_ref ?>";
+        const txnRef = "<?= $txn_ref ?>";
 
         paystack.newTransaction({
             key: <?= json_encode($_ENV['paystack_key']) ?>,

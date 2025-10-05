@@ -1,0 +1,340 @@
+:root {
+    --primary-color: #4a90e2;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --dark-bg: #2c3e50;
+    --light-bg: #f8f9fa;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-content {
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-header h2 {
+    color: var(--dark-bg);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-header .header-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.page-header .subtitle {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Item Selection Section */
+.selection-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark-bg);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: var(--primary-color);
+}
+
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.laundry-badge {
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #e0e0e0;
+    background: white;
+    color: #495057;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.laundry-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.laundry-badge.selected {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.laundry-badge.selected::before {
+    content: '✓ ';
+    font-weight: bold;
+}
+
+/* Options Section */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.option-card {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.option-card:hover {
+    border-color: var(--primary-color);
+    background: #e7f3ff;
+}
+
+.option-card.active {
+    border-color: var(--success-color);
+    background: #d4edda;
+}
+
+.option-card input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.option-card label {
+    margin: 0;
+    cursor: pointer;
+    flex: 1;
+    font-weight: 500;
+}
+
+.option-price {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+/* Pricing Table */
+.pricing-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.pricing-table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.pricing-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.pricing-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.pricing-table th {
+    padding: 1rem;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+}
+
+.pricing-table th:last-child {
+    text-align: right;
+}
+
+.pricing-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.pricing-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.pricing-table td {
+    padding: 1rem;
+    border: none;
+}
+
+.pricing-table .item-name {
+    font-weight: 500;
+    color: #495057;
+}
+
+.pricing-table .item-price {
+    text-align: right;
+}
+
+.editable {
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    min-width: 80px;
+    text-align: right;
+}
+
+.editable:hover {
+    background-color: #e7f3ff;
+    outline: 2px solid #4a90e2;
+}
+
+.editable:focus {
+    outline: 2px solid #4a90e2;
+    background-color: #fff;
+}
+
+.total-row {
+    background: #f8f9fa;
+    font-weight: 600;
+    border-top: 3px solid #667eea !important;
+}
+
+.total-row td {
+    padding: 1.25rem 1rem;
+    font-size: 1.1rem;
+    color: var(--dark-bg);
+}
+
+.total-amount {
+    color: var(--success-color);
+    font-size: 1.3rem;
+}
+
+/* Submit Button */
+.submit-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-submit {
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 1.5rem;
+    }
+
+    .selection-card, .pricing-card {
+        padding: 1.5rem;
+    }
+
+    .pricing-table th, .pricing-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .laundry-badge {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Loading Animation */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

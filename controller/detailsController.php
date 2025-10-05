@@ -3,7 +3,9 @@
 error_reporting(E_ALL);
 
 ini_set('display_errors', 1);
-
+$auth    = "";
+$user_id = "";
+$conn    = "";
 
 // ✅ Initialize Auth & Database
 $auth    = new Auth(new Database());
@@ -42,7 +44,7 @@ if ($id) {
                 $image = "https://placehold.co/400";  
             } else {
                 // ✅ Valid image
-                $image = $user_image;
+                $image = $user_image ?? "";
             }
         } else {
             // ⚠️ No user found or not verified
@@ -71,8 +73,8 @@ $galleries = [
 ];
 
 // 🔀 Slice arrays for specific gallery sections
-$firstTwo  = array_slice($galleries, 0, 2);  // First 2 images
-$lastThree = array_slice($galleries, -3);    // Last 3 images
+$firstTwo  = array_slice($galleries, 0, 2) ?? "";  // First 2 images
+$lastThree = array_slice($galleries, -3) ?? "";    // Last 3 images
 
 
 // 📝 Fetch reviews/comments for artisan
@@ -89,4 +91,6 @@ $commentResult = $getcomment->get_result();
 $countComments = $commentResult->num_rows;  
 
 
-$redirectUrl = $_SERVER['REQUEST_URI'];
+$redirectUrl = $_SERVER['REQUEST_URI'] ?? "";
+
+$page = "details" ?? "";

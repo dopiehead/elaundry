@@ -269,8 +269,8 @@ class Auth
         string $subject, string $email,
         string $message, string $date = ''
     ): bool {
-        $date = $date ?: date('Y-m-d H:i:s');
-        $stmt = $this->conn->prepare("INSERT INTO contact (fullname, email, subject, message ,date)
+        $date = date('Y-m-d H:i:s');
+        $stmt = $this->conn->prepare("INSERT INTO contact (fullname, email, subject, message , date)
             VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $fullname, $email, $subject, $message ,$date);
 

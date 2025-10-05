@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <?php include("../components/links.php") ?>
   <title>Forgot Password</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/forgot-password.css">
 </head>
 <body>
@@ -41,9 +39,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <!-- jQuery (latest version from official CDN) -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-3gJwYp4gU5R3gIGTyAdk3Mek8R9Pp1szl8Zjq9zQz8E="
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
        <script>
 $(document).on("click", "#submit", function(e) {

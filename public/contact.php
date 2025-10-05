@@ -1,20 +1,14 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eLaundry - Details</title>
   <?php include("../components/links.php") ?>
-  <link rel="stylesheet" href="../assets/css/details.css">
-  <link rel="stylesheet" href="../assets/css/nav.css">
-  <link rel="stylesheet" href="../assets/css/footer.css">
   <link rel="stylesheet" href="../assets/css/contact.css">
-
 </head>
 <body>
 
   <?php include("../components/nav.php") ?>
-  <?php include("../components/infoController.php") ?>
+  <?php include dirname(__DIR__) . '/controller/userController.php'; ?>
   <br><br>
 
   <div class="container d-flex flex-md-row flex-column contact-container">
@@ -33,7 +27,7 @@
 
       <form method="post" id="contactForm">
         <div class="form-group">
-          <input type="text" name="fullname" id='fullname' placeholder="Your Name" value="<?= htmlspecialchars($user_name) ?? "" ?>" required>
+          <input type="text" name="fullname" id='fullname' placeholder="Your Name" value="<?=  isset($user_email) ? $user_email : null  ?>" required>
         </div>
 
         <div class="form-group">
@@ -41,7 +35,7 @@
         </div>
 
         <div class="form-group">
-          <input type="email" name="email" id='email' placeholder="Your Email" <?= htmlspecialchars($user_email) ?? "" ?> required>
+          <input type="email" name="email" id='email' placeholder="Your Email" <?= isset($user_email) ? $user_email : null ?> required>
         </div>
 
         <div class="form-group">
@@ -60,7 +54,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <!-- ✅ jQuery (make sure this is included before script) -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 $(document).ready(function(){
 
@@ -75,17 +69,17 @@ $(document).ready(function(){
 
     // ✅ Basic validation
     if(fullname.length < 3){
-      alert("Please enter your full name (at least 3 characters).");
+      swal("Notice","Please enter your full name (at least 3 characters).","warning");
       return false;
     }
 
     if(email === "" || !/^\S+@\S+\.\S+$/.test(email)){
-      alert("Please enter a valid email address.");
+      swal("Notice","Please enter a valid email address.","warning");
       return false;
     }
 
     if(message.length < 5){
-      alert("Message must be at least 5 characters long.");
+      swal("Notice","Message must be at least 5 characters long.","warning");
       return false;
     }
 
@@ -104,12 +98,17 @@ $(document).ready(function(){
         $(".btn-submit").prop("disabled", true).text("Sending...");
       },
       success: function(response){
-        alert("Message sent successfully!");
+        if(response==1){
+        Swal.fire("Success","Message sent successfully!","success");
         $("#contactForm")[0].reset();
         $(".btn-submit").prop("disabled", false).text("Send Message");
+        }
+        else{
+          Swal.fire("Notice",response,"warning");
+        }
       },
       error: function(xhr, status, error){
-        alert("An error occurred: " + error);
+        Swal.fire("Notice","An error occurred: " + error,"warning");
         $(".btn-submit").prop("disabled", false).text("Send Message");
       }
     });

@@ -115,112 +115,6 @@
 
     <?php include("../components/how-it-works.php")  ?>
 
-    <!-- Services Section -->
-    <!-- <section class="services-section section-padding py-5">
-        <div class="container">
-            <div class="section-subtitle">SERVICES</div>
-            <h2 class="section-title">Services & Packages</h2>
-            
-            <div class="row">
-                 Regular Package -->
-                <!-- <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-header">
-                            <div class="service-icon">
-                                <i class="fas fa-tshirt"></i>
-                            </div>
-                            <div>
-                                <h3 class="service-name">REGULAR</h3>
-                                <p class="service-subtitle">Perfect for people who live alone.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="service-features">
-                            <h6>What's included</h6>
-                            <ul class="feature-list">
-                                <li>2 cloth per week</li>
-                                <li>up to 10 lbs per cloth</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="price-section">
-                            <span class="price">10 NGN</span>
-                            <span class="price-period">/per month</span>
-                        </div>
-                        
-                        <button class="btn btn-choose secondary">Choose</button>
-                    </div>
-                </div>-->
-                
-                <!-- Brownies Package (Featured) -->
-                <!-- <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card featured">
-                        <div class="service-header">
-                            <div class="service-icon">
-                                <i class="fas fa-crown"></i>
-                            </div>
-                            <div>
-                                <h3 class="service-name">BROWNIES</h3>
-                                <p class="service-subtitle">Perfect for couples size 2-6</p>
-                            </div>
-                        </div>
-                        
-                        <div class="service-features">
-                            <h6>What's included</h6>
-                            <ul class="feature-list">
-                                <li>4 cloth per week</li>
-                                <li>up to 12 lbs per cloth</li>
-                                <li>Special garments</li>
-                                <li>Pickup & drop off</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="price-section">
-                            <span class="price">20 NGN</span>
-                            <span class="price-period">/per month</span>
-                        </div>
-                        
-                        <button class="btn btn-choose primary">Choose</button>
-                    </div>
-                </div> -->
-                
-                <!-- Prime Package -->
-                <!-- <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-header">
-                            <div class="service-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div>
-                                <h3 class="service-name">PRIME</h3>
-                                <p class="service-subtitle">Perfect for families size 4-6</p>
-                            </div>
-                        </div>
-                        
-                        <div class="service-features">
-                            <h6>What's included</h6>
-                            <ul class="feature-list">
-                                <li>6 cloth per week</li>
-                                <li>up to 15 lbs per cloth</li>
-                                <li>Special garments</li>
-                                <li>Pickup & drop off</li>
-                                <li>Free detergent samples</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="price-section">
-                            <span class="price">30 NGN</span>
-                            <span class="price-period">/per month</span>
-                        </div>
-                        
-                        <button class="btn btn-choose secondary">Choose</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->  
-
-    <?php include("../components/price-break-down.php") ?>
     <!-- Registration Section -->
     <section class="ls-registration-section">
         <div class="container">
@@ -318,8 +212,7 @@
                 </div>
             </div>
         </section>
-
-    
+            
         <!-- Footer Banner -->
       <?php include("../components/footer.php") ?>
     </div>
