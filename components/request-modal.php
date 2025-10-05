@@ -14,19 +14,19 @@
 
       <!-- Number of Clothes -->
       <div class="mb-3">
-        <label for="number_of_clothes" class="form-label text-light">Number of Clothes</label>
+        <label for="number_of_clothes" class="form-label  text-secondary">Number of Clothes</label>
         <input type="number" name="number_of_clothes" id="number_of_clothes" class="form-control" placeholder="Enter number of clothes" required>
       </div>
 
             <!-- Price -->
     <div class="mb-3">
-        <label for="amount" class="form-label text-light">Proposed Amount</label>
+        <label for="amount" class="form-label  text-secondary">Proposed Amount</label>
         <input type="number" name="amount" id="amount" step="750" min="750" class="form-control" placeholder="Enter Amount" required>
     </div>
 
       <!-- User Preference -->
       <div class="mb-3">
-        <label for="user_preference" class="form-label text-light">User Preference</label>
+        <label for="user_preference" class="form-label  text-secondary">User Preference</label>
         <select name="user_preference" id="user_preference" class="form-select" required>
           <option value="">-- Select Preference --</option>
           <option value="wash_only">Wash Only</option>
@@ -37,13 +37,13 @@
 
       <!-- Location -->
       <div class="mb-3">
-        <label for="location" class="form-label text-light">Location</label>
+        <label for="location" class="form-label text-secondary">Location</label>
         <input type="text" name="location" id="location" class="form-control" placeholder="Enter location" required>
       </div>
 
       <!-- Date -->
       <div class="mb-3">
-        <label for="date" class="form-label text-light">Date</label>
+        <label for="date" class="form-label  text-secondary">Date</label>
         <input type="date" name="date" id="date" class="form-control" required>
       </div>
 
@@ -100,6 +100,7 @@ $(function(){
     // Toggle modal
     $(document).on("click", "#toggleRequestModal", function () {
         $("#requestModal").toggleClass("active");
+      
     });
 });
 </script>

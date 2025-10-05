@@ -3,14 +3,14 @@
 <div id="reportModal" class="report-modal-overlay d-none">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
-        
+
         <h2>Report User</h2>
 
         <form id="reportForm" method="post">
          
-            <input type="hidden" name="vendor_name" value="<?= htmlspecialchars($user_name) ?>" required>
+            <input type="text" name="vendor_name" <?= isset($user_name) ? 'readonly' : ''; ?> value="<?= htmlspecialchars($user_name) ?>" required >
           
-            <input type="hidden" name="vendor_email" value="<?= htmlspecialchars($user_email) ?>" required>
+            <input type="text" name="vendor_email" <?= isset($user_name) ? 'readonly' : ''; ?> value="<?= htmlspecialchars($user_email) ?>" required>
         
             <input type="hidden" name="user_type" value="<?= htmlspecialchars($user_type) ?>" required>
           

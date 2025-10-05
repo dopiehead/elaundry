@@ -101,3 +101,7 @@
 .report-btn:hover {
     background: #b91c1c;
 }
+
+::placeholder{
+    color:#818181
+}

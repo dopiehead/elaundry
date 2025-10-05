@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
 
-    <title>De-light Laundry</title>
+    <title> Laundry</title>
     <?php include("../components/links.php") ?>
     <link rel="stylesheet" href="../assets/css/details.css">
     <link rel="stylesheet" href="../assets/css/pricingcontroller.css">
+    <link rel="stylesheet" href="../assets/css/message-modal.css">
 </head>
 <body>
+<?php include("../components/message-modal.php") ?>
 <?php include("../components/nav.php") ?>
 <?php include ("../controller/detailsController.php") ?>
     <!-- Header Section -->
@@ -204,7 +206,7 @@
      <?php include("../components/footer.php") ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
-    <?php include("../components/message-modal.php") ?>
+
     <?php include("../components/report-modal.php") ?>
     <?php include("../components/request-modal.php") ?>
     <script>
@@ -301,6 +303,12 @@ $(document).ready(function(){
 });
 </script>
 
+<script>
+$(document).on("click", "#toggleModal", function () {
+    $("#messageModal").toggleClass("active"); // smooth toggle (can use .toggle() if you prefer)
+   
+});
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
