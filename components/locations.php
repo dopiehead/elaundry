@@ -5,7 +5,7 @@
         
         <div class="location-tags">
             <?php
-            require("../engine/connection.php");
+          require_once __DIR__ . '/../engine/connection.php';
 
             // ✅ Fetch all unique states
             $getstates = $con->prepare("SELECT DISTINCT state FROM states_in_nigeria ORDER BY state ASC");

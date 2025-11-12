@@ -34,7 +34,10 @@ if($_SESSION['user_type']=='customer'){
     <div class="main-content bg-secondary">
 
         <!-- Header -->
-        <?php include("components/overview.php"); ?>
+        <?php
+ $overview = "Overview";
+include("components/overview.php");
+ ?>
 
         <!-- Navigation Tabs -->
         <div class="tabs-nav">

@@ -35,7 +35,7 @@ $(function(){
         e.preventDefault();
 
         $.ajax({
-            url: "../controller/messageController",
+            url: "controller/messageController",
             type: "POST",
             data: $(this).serialize(),
             beforeSend: function(){

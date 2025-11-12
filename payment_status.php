@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>eLaundry - Subscription Notice</title>
-  <?php include("../components/links.php"); ?>
+  <?php include("components/links.php"); ?>
   <style>
     body{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -37,7 +37,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <?php include("../components/nav.php"); ?>
+  <?php include("components/nav.php"); ?>
 
   <br><br>
   <div class="container subscription-notice">
@@ -52,7 +52,7 @@
  
   <br><br><br>
   <!-- Footer -->
-  <?php include("../components/footer.php"); ?> 
+  <?php include("components/footer.php"); ?> 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>

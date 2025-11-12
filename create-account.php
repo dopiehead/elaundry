@@ -1,12 +1,12 @@
 <?php 
-require("../class/auth.php");
+require("class/auth.php");
 $auth = new Auth(new Database());
 $conn = $auth->getConnection();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include("../components/links.php") ?>
+    <?php include("components/links.php") ?>
     <title>Sign Up Form</title>
     <link rel="stylesheet" href="../assets/css/create-account.css">
 </head>
@@ -113,7 +113,7 @@ $(function(){
         let formData = new FormData(this);
 
         $.ajax({
-            url: "../controller/registerController",
+            url: "controller/registerController",
             type: "POST",
             data: formData,
             contentType: false,

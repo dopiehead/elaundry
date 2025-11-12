@@ -1,7 +1,7 @@
-<?php include("../controller/subscriptionController.php") ?>
+<?php include("controller/subscriptionController.php") ?>
 <html lang="en">
 <head>
-    <?php include("../components/links.php") ?>
+    <?php include("components/links.php") ?>
     <link rel="stylesheet" href="../assets/css/subscription.css">
     <title>Subscription</title>
 </head>
@@ -85,7 +85,7 @@
                     <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] !==""): ?>
                     <button class="choose-btn btn-platinum" id="20" onclick="selectPlan('Growing')">Choose</button>
                     <?php else : ?>
-                        <a href="../public/login?details=subscription.php" class=" btn choose-btn " id="20" onclick="selectPlan('Growing')">Choose</a>
+                        <a href="login?details=subscription.php" class=" btn choose-btn " id="20" onclick="selectPlan('Growing')">Choose</a>
                      <?php endif; ?>
                 </div>
             </div>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/login.css">
 
 </head>
 <body>
@@ -15,7 +15,7 @@
       <!-- Illustration Section -->
       <div class="col-lg-6 illustration-section text-center">
         <div class="illustration-container">
-          <img src="../assets/images/auth.png" 
+          <img src="assets/images/auth.png" 
                alt="Illustration" 
                class="illustration-image">
         </div>
@@ -89,7 +89,7 @@ $(document).on("click", "#submit", function(e) {
     const formData = $("#login-form").serialize();
 
     $.ajax({
-        url: "../controller/loginController",
+        url: "controller/loginController",
         type: "POST",
         data: formData,
         success: function(response) {
@@ -101,7 +101,7 @@ $(document).on("click", "#submit", function(e) {
 
             if (response === "1") {
                 // Redirect if login is successful
-                window.location.href = url_details ? url_details : "../protected/dashboard";
+                window.location.href = url_details ? url_details : "protected/dashboard";
             } else {
                 // Show error message
                 Swal.fire("Notice", response || "Login failed. Please try again.", "warning");

@@ -33,7 +33,7 @@ if ($id) {
             $user = $result->fetch_assoc();
 
             // 📄 Include template to display user details
-            include("../contents/user-details.php");
+            include("contents/user-details.php");
 
             // 🖼️ Validate user profile image
             $extension = strtolower(pathinfo($user_image, PATHINFO_EXTENSION));
@@ -64,12 +64,12 @@ if ($id) {
 
 // ******** */ more pictures from artisan (static gallery example)
 $galleries = [
-    ['img'=>'../assets/images/laundry/image2.png', 'alt'=>'laundry man working'], 
-    ['img'=>'../assets/images/laundry/image3.png', 'alt'=>'Barber shop interior'],  
-    ['img'=>'../assets/images/laundry/image4.png', 'alt'=>'Hair styling'],
-    ['img'=>'../assets/images/laundry/image.png',  'alt'=>'Barber tools'], 
-    ['img'=>'../assets/images/laundry/image2.png', 'alt'=>'Customer service'],
-    ['img'=>'../assets/images/laundry/image3.png', 'alt'=>'Barber shop']           
+    ['img'=>'assets/images/laundry/image2.png', 'alt'=>'laundry man working'], 
+    ['img'=>'assets/images/laundry/image3.png', 'alt'=>'Barber shop interior'],  
+    ['img'=>'assets/images/laundry/image4.png', 'alt'=>'Hair styling'],
+    ['img'=>'assets/images/laundry/image.png',  'alt'=>'Barber tools'], 
+    ['img'=>'assets/images/laundry/image2.png', 'alt'=>'Customer service'],
+    ['img'=>'assets/images/laundry/image3.png', 'alt'=>'Barber shop']           
 ];
 
 // 🔀 Slice arrays for specific gallery sections

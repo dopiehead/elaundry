@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../assets/css/request-modal.css">
+<link rel="stylesheet" href="assets/css/request-modal.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 <!-- Modal Overlay -->
@@ -71,7 +71,7 @@ $(function(){
         });
 
         $.ajax({
-            url: "../controller/requestController.php", // ✅ ensure correct path
+            url: "controller/requestController.php", // ✅ ensure correct path
             type: "POST",
             data: JSON.stringify(formData),  // send JSON
             contentType: "application/json", // tell PHP it’s JSON

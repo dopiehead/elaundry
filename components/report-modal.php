@@ -27,7 +27,7 @@
 <!-- jQuery + SweetAlert -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<link rel="stylesheet" href="../assets/css/reportUser.css">
+<link rel="stylesheet" href="assets/css/reportUser.css">
 
 <script>
 $(function(){
@@ -52,7 +52,7 @@ $(function(){
         e.preventDefault();
 
         $.ajax({
-            url: "../controller/reportUserController",
+            url: "controller/reportUserController",
             type: "POST",
             data: $(this).serialize(),
             dataType: "json",

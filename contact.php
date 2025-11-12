@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <title>eLaundry - Details</title>
-  <?php include("../components/links.php") ?>
+  <?php include("components/links.php") ?>
   <link rel="stylesheet" href="../assets/css/contact.css">
 </head>
 <body>
 
-  <?php include("../components/nav.php") ?>
+  <?php include("components/nav.php") ?>
   <?php include dirname(__DIR__) . '/controller/userController.php'; ?>
   <br><br>
 
@@ -50,7 +50,7 @@
   <br><br>
 
   <!-- Footer -->
-  <?php include("../components/footer.php") ?> 
+  <?php include("components/footer.php") ?> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <!-- ✅ jQuery (make sure this is included before script) -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -85,7 +85,7 @@ $(document).ready(function(){
 
     // ✅ Send via AJAX
     $.ajax({
-      url: "../controller/contactController",
+      url: "controller/contactController",
       type: "POST",
       data: {
         fullname: fullname,

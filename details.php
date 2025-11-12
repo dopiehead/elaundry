@@ -3,15 +3,15 @@
 <head>
 
     <title> Laundry</title>
-    <?php include("../components/links.php") ?>
-    <link rel="stylesheet" href="../assets/css/details.css">
-    <link rel="stylesheet" href="../assets/css/pricingcontroller.css">
-    <link rel="stylesheet" href="../assets/css/message-modal.css">
+    <?php include("components/links.php") ?>
+    <link rel="stylesheet" href="assets/css/details.css">
+    <link rel="stylesheet" href="assets/css/pricingcontroller.css">
+    <link rel="stylesheet" href="assets/css/message-modal.css">
 </head>
 <body>
-<?php include("../components/message-modal.php") ?>
-<?php include("../components/nav.php") ?>
-<?php include ("../controller/detailsController.php") ?>
+<?php include("components/message-modal.php") ?>
+<?php include("components/nav.php") ?>
+<?php include ("controller/detailsController.php") ?>
     <!-- Header Section -->
      <br><br>
     <div class="header-section mt-3">
@@ -33,9 +33,9 @@
                     <?php if($payment_status == 1) : ?>
                     <a id="toggleModal"  class="request-btn">Send message</a>
                     <?php elseif(!$auth->isLoggedIn()): ?>
-                        <a href="../public/login?details=<?= urlencode($redirectUrl) ?>"  class="request-btn">Send message</a>
+                        <a href="login?details=<?= urlencode($redirectUrl) ?>"  class="request-btn">Send message</a>
                         <?php else: ?>
-                            <a href="../public/payment_status"  class="request-btn">Send message</a>
+                            <a href="payment_status"  class="request-btn">Send message</a>
                     <?php endif ?>
                 </div>
             </div>
@@ -97,7 +97,7 @@
 
 <?php else: ?>
     <!-- 💳 Logged in but no active payment -->
-    <a class="btn btn-request btn-info" href="../public/payment_status">
+    <a class="btn btn-request btn-info" href="payment_status">
         Request
     </a>
 <?php endif; ?>
@@ -141,7 +141,7 @@
 
     <br><br>
 
-    <?php include ("../controller/pricingController.php") ?>
+    <?php include ("controller/pricingController.php") ?>
 
     <!-- price break down goes here -->
     <div class="container">
@@ -203,19 +203,19 @@
     <br><br>
   
     <!-- footer goes here -->
-     <?php include("../components/footer.php") ?>
+     <?php include("components/footer.php") ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
 
-    <?php include("../components/report-modal.php") ?>
-    <?php include("../components/request-modal.php") ?>
+    <?php include("components/report-modal.php") ?>
+    <?php include("components/request-modal.php") ?>
     <script>
 $(function(){
     $("#commentForm").on("submit", function(e){
         e.preventDefault();
 
         $.ajax({
-            url: "../controller/addcommentController",   // your PHP backend
+            url: "controller/addcommentController",   // your PHP backend
             type: "POST",
             data: $(this).serialize(),
             dataType: "json", // ✅ expect JSON
@@ -267,7 +267,7 @@ $(document).ready(function(){
         let counter = $("#like-count-" + sp_id);
 
         $.ajax({
-            url: "../controller/likesController", // your backend endpoint
+            url: "controller/likesController", // your backend endpoint
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ sp_id: sp_id }),

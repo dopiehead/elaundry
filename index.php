@@ -6,21 +6,21 @@
     <title>Laundry Service</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/index.css">
-    <link rel="stylesheet" href="../assets/css/nav.css">
-    <link rel="stylesheet" href="../assets/css/locations.css">
-    <link rel="stylesheet" href="../assets/css/how-it-works.css">
-    <link rel="stylesheet" href="../assets/css/price-break-down.css">
-    <link rel="stylesheet" href="../assets/css/groups.css">
-    <link rel="stylesheet" href="../assets/css/video.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/locations.css">
+    <link rel="stylesheet" href="assets/css/how-it-works.css">
+    <link rel="stylesheet" href="assets/css/price-break-down.css">
+    <link rel="stylesheet" href="assets/css/groups.css">
+    <link rel="stylesheet" href="assets/css/video.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <style>
      
     </style>
 </head>
 <body>
-     <?php include("../components/nav.php") ?>
-     <?php include("../controller/indexController.php") ?>
+     <?php include("components/nav.php") ?>
+     <?php include("controller/indexController.php") ?>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
@@ -113,7 +113,7 @@
         </div>
     </section>
 
-    <?php include("../components/how-it-works.php")  ?>
+    <?php include("components/how-it-works.php")  ?>
 
     <!-- Registration Section -->
     <section class="ls-registration-section">
@@ -154,12 +154,12 @@
         </div>
     </section>
 
-    <?php include("../components/locations.php") ?>
+    <?php include("components/locations.php") ?>
 
     <div class="container-fluid">
         <!-- Video Section -->
     
-    <?php include("../components/video.php") ?>
+    <?php include("components/video.php") ?>
 
         <!-- CTA Banner -->
         <section class="sv-cta-banner">
@@ -187,7 +187,7 @@
 
     <div class="container">
         <!-- Groups Section -->
-        <?php include("../components/groups.php") ?>
+        <?php include("components/groups.php") ?>
 
         <!-- Promotional Banner -->
         <section class="gr-promo-banner">
@@ -214,7 +214,7 @@
         </section>
             
         <!-- Footer Banner -->
-      <?php include("../components/footer.php") ?>
+      <?php include("components/footer.php") ?>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

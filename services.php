@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
     <title>eLaundry</title>
-    <?php include("../components/links.php") ?>
-    <link rel="stylesheet" href="../assets/css/products.css">
+    <?php include("components/links.php") ?>
+    <link rel="stylesheet" href="assets/css/products.css">
 <body>
-    <?php include("../components/nav.php") ?>
+    <?php include("components/nav.php") ?>
     <br><br>
     <div class="container-fluid py-4 ">
         <div class="row">
@@ -33,7 +33,13 @@
                             <div class="col-md-4">
                                 <label class="form-label text-muted">Enter your location</label>
 
-                                <?php include("../contents/states.php") ?>
+                                <?php 
+
+                                   error_reporting(E_ALL);
+                                   ini_set('display_errors', 1);
+                                include("contents/states.php");
+                                
+                                 ?>
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label text-muted">Service type</label>
@@ -162,7 +168,7 @@
 
 
 
-    <?php include("../components/footer.php") ?>
+    <?php include("components/footer.php") ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
    <!-- ✅ Load jQuery before your script -->
@@ -207,7 +213,7 @@ $(function(){
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
-$(".list-container").load("../controller/serviceController.php");
+$(".list-container").load("controller/serviceController.php");
 $(document).ready(function() {
 
     // Search input
@@ -297,7 +303,7 @@ $(document).ready(function() {
         $(".spinner-border").show();
 
         $.ajax({
-            url: "../controller/serviceController.php",
+            url: "controller/serviceController.php",
             type: "POST",
             data: {
                 q: q || "",

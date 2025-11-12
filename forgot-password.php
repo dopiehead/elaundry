@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <?php include("../components/links.php") ?>
+   <?php include("components/links.php") ?>
   <title>Forgot Password</title>
-  <link rel="stylesheet" href="../assets/css/forgot-password.css">
+  <link rel="stylesheet" href="assets/css/forgot-password.css">
 </head>
 <body>
   <div class="container-fluid">
@@ -15,7 +15,7 @@
       <div class="col-lg-6 illustration-section">
 
         <div class="illustration-container">
-          <img src="../assets/images/auth.png" alt="Illustration" class="illustration-image">
+          <img src="assets/images/auth.png" alt="Illustration" class="illustration-image">
         </div>
       </div>
 
@@ -51,7 +51,7 @@ $(document).on("click", "#submit", function(e) {
 
     if (formData.length > 0) {
         $.ajax({
-            url: "../controller/forgetController.php",
+            url: "controller/forgetController.php",
             data: formData,
             type: "POST",
             success: function(response) {

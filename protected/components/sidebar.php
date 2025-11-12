@@ -3,7 +3,7 @@
     
     <div class="sidebar-nav">
         <div class="sidebar-item">
-            <a class="text-decoration-none" href="../public/index" title="Home">
+            <a class="text-decoration-none" href="../index" title="Home">
                 <i class="fas fa-home"></i>
             </a>
         </div>
@@ -14,9 +14,7 @@
                 <i class="fas fa-tachometer-alt"></i>
             </a>
         </div>
-        <?php endif ?>
-
-        <?php
+        <?php endif;
 $sidebarItems = [
     ['href' => 'profile.php', 'icon' => 'fa-user-alt', 'title' => 'Profile'],  ['href' => 'inbox.php', 'icon' => 'fa-envelope', 'title' => 'Inbox'], ['href' => '#', 'icon' => 'fa-cog', 'title' => 'Settings', 'id' => 'settings']
 ];
@@ -42,7 +40,7 @@ foreach ($sidebarItems as $item) {
 
 <?php if($_SESSION['user_type']!='customer'): ?>
         <div class="sidebar-item active">
-            <a class="text-decoration-none" href="../public/subscription" title="Subscription">
+            <a class="text-decoration-none" href="../subscription" title="Subscription">
                 <i class="fas fa-credit-card"></i>
             </a>
         </div>
@@ -54,14 +52,7 @@ foreach ($sidebarItems as $item) {
                 </a>
        </div>
 
-
-
-
-
-
  <?php endif ?>
-
-
 
         <!-- Grouped Settings Section -->
         <div class="sidebar-settings d-none border-top border-white">

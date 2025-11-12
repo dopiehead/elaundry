@@ -1,7 +1,7 @@
 <?php
 // verify-user.php
 session_start();
-require_once("../class/auth.php"); // include your DB connection
+require_once("class/auth.php"); // include your DB connection
 $auth = new Auth(new Database);
 $conn = $auth->getConnection();
 $user_id = $auth->getUserId();

@@ -2,6 +2,7 @@
 
 $numNotifications = 0;
 $user_image = ''; // default image fallback
+$overview = "";
 
 if (isset($_SESSION['user_id'])) {
     // Fetch notifications count
@@ -31,7 +32,7 @@ if (isset($_SESSION['user_id'])) {
 ?>
 
 <div class="header d-flex justify-content-between align-items-center px-3 py-2 bg-white shadow-sm">
-    <h1 class="header-title h5 mb-0">Overview</h1>
+    <h1 class="header-title h5 mb-0"><?= htmlspecialchars($overview) ?></h1>
 
     <div class="header-right d-flex align-items-center gap-3">
         <a href="notifications.php" class="position-relative text-decoration-none text-dark" aria-label="Notifications">
